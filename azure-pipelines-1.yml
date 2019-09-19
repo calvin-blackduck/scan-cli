@@ -1,0 +1,11 @@
+steps:
+- bash: |
+   bash <(curl -s -L https://detect.synopsys.com/detect.sh) \
+   --detect.project.name=test-azure-scan \
+   --detect.project.version.name=1.0 \
+   --blackduck.url=https://seantest.app.blackduck.com \
+   --blackduck.username=sysadmin \
+   --blackduck.password=Fawomo \
+   --blackduck.trust.cert=true \
+   --logging.level.com.synopsys.integration=DEBUG
+  displayName: 'Synopsys Detect Scan'
