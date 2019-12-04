@@ -1,14 +1,3 @@
-# set variables once
-variables:
-  blackduck.url: https://sup-cliang.dc1.lan
-  blackduck.api.token: 
-
-bash <(curl -s https://detect.synopsys.com/detect.sh) \
---blackduck.url=$(blackduck.url) \
---blackduck.api.token=$(blackduck.api.token) \
---detect.docker.image=<registryname>.azurecr.io/<containername>:$(Build.BuildId) \
---detect.project.name=$(Build.DefinitionName) \
---detect.project.version.name=$(Build.BuildNumber)
 - task: SynopsysDetectTask@2
   inputs:
     Products: 'BD'
