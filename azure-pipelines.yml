@@ -9,3 +9,9 @@ bash <(curl -s https://detect.synopsys.com/detect.sh) \
 --detect.docker.image=<registryname>.azurecr.io/<containername>:$(Build.BuildId) \
 --detect.project.name=$(Build.DefinitionName) \
 --detect.project.version.name=$(Build.BuildNumber)
+- task: SynopsysDetectTask@2
+  inputs:
+    Products: 'BD'
+    BlackDuckService: 'aaronf-hub'
+    DetectVersion: 'latest'
+    DetectArguments: '--detect.project.name=test_azure --detect.project.version.name=1.0'
