@@ -1,6 +1,10 @@
-- task: SynopsysDetectTask@2
-  inputs:
-    Products: 'BD'
-    BlackDuckService: 'aaronf-hub'
-    DetectVersion: 'latest'
-    DetectArguments: '--detect.project.name=test_azure --detect.project.version.name=1.0'
+# set variables once
+variables:
+  blackduck.url: https://sup-aaronf.dc1.lan
+  blackduck.api.token: ZWQzODFmMDAtOWY2Mi00ZTg1LTkwOWQtMzdiNDQxYzZlYWZiOmY5ZThhMmQwLWU3MjItNDA2NC04MDIxLTBiMjY4ZTM3OWJlOQ==
+
+bash <(curl -s https://detect.synopsys.com/detect.sh) \
+--blackduck.url=$(blackduck.url) \
+--blackduck.api.token=$(blackduck.api.token) \
+--detect.project.name=test-azure-proj \
+--detect.project.version.name=1.0
