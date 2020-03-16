@@ -18,7 +18,7 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-
+steps:
   - task: SynopsysDetectTask@2
     inputs:
       Products: 'BD'
