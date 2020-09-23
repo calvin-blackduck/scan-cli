@@ -1,8 +1,0 @@
-steps:
-- bash: |
-   bash <(curl -s -L https://detect.synopsys.com/detect.sh) \
-   --detect.project.name=test-azure-scan \
-   --detect.project.version.name=new_connection \
-   --blackduck.trust.cert=true \
-   --logging.level.com.synopsys.integration=DEBUG
-  displayName: 'Synopsys Detect Scan'
