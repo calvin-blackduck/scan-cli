@@ -1,0 +1,8 @@
+steps:
+- task: synopsys-detect.synopsys-detect.synopsys-detect-task.SynopsysDetectTask@2
+  displayName: 'Run Synopsys Detect for your build '
+  inputs:
+    Products: BD
+    BlackDuckService: 'Calvin Black Duck'
+    DetectVersion: Latest
+    DetectArguments: 'bash <(curl -s https://detect.synopsys.com/detect.sh) --blackduck.url=https://sup-cliang.dc1.lan/ --blackduck.username=sysadmin --blackduck.password=blackduck --blackduck.trust.cert=true --detect.project.name=test-scan --detect.project.version.name=1 --logging.level.com.synopsys.integration=DEBUG --blackduck.offline.mode=true'
